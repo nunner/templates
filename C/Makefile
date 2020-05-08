@@ -1,27 +1,29 @@
-LDLIBS =
-LDFLAGS +=
+LDLIBS=
+LDFLAG=
 
-CFLAGS=-Wall -Werror -O3
+CFLAGS=-Wall -Werror -O3 -g -fsanitize=undefined -fsanitize=address
 CC=gcc
 
-SRC=$(wildcard src/*.c)
+SRC=$(shell find . -name "*.c")
 INCLUDE=include
 
 TARGET=
 
-all: $(TARGET)
+all: clean $(TARGET) run
 
 $(TARGET): $(SRC)
-	$(CC) -I §(INCLUDE) -o $(TARGET) $(CFLAGS) $(LDFLAGS) $^ $(LDLIBS)
+	$(CC) -I $(INCLUDE) -o $(TARGET) $(CFLAGS) $(LDFLAGS) $^ $(LDLIBS)
 
 debug: $(TARGET)
 	ulimit -c unlimited
-	./$(TARGET) -f root mount
 
 install:
 	sudo cp $(TARGET) /usr/local/bin/$(TARGET)
 
-update: clean all install
+update: clean all 
+
+run:
+	./$(TARGET)
 
 clean:
 	rm -f $(TARGET)
