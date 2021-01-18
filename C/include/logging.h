@@ -8,7 +8,7 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
-#define logger(fmt, ...) logger_tag(NAME VERSION, fmt, ##__VA_ARGS__)
+#define logger(fmt, ...) logger_tag(NAME " " VERSION, fmt, ##__VA_ARGS__)
 
 #define logger_success(fmt, ...) logger(ANSI_COLOR_GREEN fmt ANSI_COLOR_RESET, ##__VA_ARGS__)
 #define logger_warning(fmt, ...) logger(ANSI_COLOR_YELLOW fmt ANSI_COLOR_RESET, ##__VA_ARGS__)
