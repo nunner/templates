@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$(TARGET)	C/Makefile	/^$(TARGET): $(SRC)$/;"	t
+ANSI_COLOR_BLUE	C/include/logging.h	/^#define ANSI_COLOR_BLUE /;"	d
+ANSI_COLOR_CYAN	C/include/logging.h	/^#define ANSI_COLOR_CYAN /;"	d
+ANSI_COLOR_GREEN	C/include/logging.h	/^#define ANSI_COLOR_GREEN /;"	d
+ANSI_COLOR_MAGENTA	C/include/logging.h	/^#define ANSI_COLOR_MAGENTA /;"	d
+ANSI_COLOR_RED	C/include/logging.h	/^#define ANSI_COLOR_RED /;"	d
+ANSI_COLOR_RESET	C/include/logging.h	/^#define ANSI_COLOR_RESET /;"	d
+ANSI_COLOR_YELLOW	C/include/logging.h	/^#define ANSI_COLOR_YELLOW /;"	d
+CC	C/Makefile	/^CC=gcc$/;"	m
+CFLAGS	C/Makefile	/^CFLAGS=-Wall -Werror -O3 -g -fsanitize=undefined -fsanitize=address -DNAME=\\"$(TARGET)\\" -DVER/;"	m
+INCLUDE	C/Makefile	/^INCLUDE=include$/;"	m
+LDFLAG	C/Makefile	/^LDFLAG=$/;"	m
+LDLIBS	C/Makefile	/^LDLIBS=$/;"	m
+SRC	C/Makefile	/^SRC=$(shell find . -name "*.c")$/;"	m
+TARGET	C/Makefile	/^TARGET=$/;"	m
+VERSION	C/Makefile	/^VERSION=$/;"	m
+all	C/Makefile	/^all: clean $(TARGET) run$/;"	t
+clean	C/Makefile	/^clean:$/;"	t
+debug	C/Makefile	/^debug: $(TARGET)$/;"	t
+install	C/Makefile	/^install:$/;"	t
+logger	C/include/logging.h	/^#define logger(/;"	d
+logger_fatal	C/include/logging.h	/^#define logger_fatal(/;"	d
+logger_success	C/include/logging.h	/^#define logger_success(/;"	d
+logger_tag	C/src/logging.c	/^logger_tag(char *tag, char *format, ...)$/;"	f	typeref:typename:void
+logger_warning	C/include/logging.h	/^#define logger_warning(/;"	d
+logging	C/src/logging.c	/^static bool logging = false;$/;"	v	typeref:typename:bool	file:
+logging_off	C/src/logging.c	/^logging_off()$/;"	f	typeref:typename:void
+logging_on	C/src/logging.c	/^logging_on()$/;"	f	typeref:typename:void
+run	C/Makefile	/^run:$/;"	t
+toggle_logging	C/src/logging.c	/^toggle_logging()$/;"	f	typeref:typename:void
+update	C/Makefile	/^update: clean all $/;"	t

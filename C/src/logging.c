@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#include "logging.h"
+
 static bool logging = false;
 
 void
