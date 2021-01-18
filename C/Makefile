@@ -1,13 +1,14 @@
+TARGET=
+VERSION=
+
 LDLIBS=
 LDFLAG=
 
-CFLAGS=-Wall -Werror -O3 -g -fsanitize=undefined -fsanitize=address
+CFLAGS=-Wall -Werror -O3 -g -fsanitize=undefined -fsanitize=address -DNAME=\"$(TARGET)\" -DVERSION=\"$(VERSION)\"
 CC=gcc
 
 SRC=$(shell find . -name "*.c")
 INCLUDE=include
-
-TARGET=
 
 all: clean $(TARGET) run
 
